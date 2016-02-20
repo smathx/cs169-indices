@@ -1,0 +1,11 @@
+            movies GET    /movies(.:format)                 movies#index
+                   POST   /movies(.:format)                 movies#create
+         new_movie GET    /movies/new(.:format)             movies#new
+        edit_movie GET    /movies/:id/edit(.:format)        movies#edit
+             movie GET    /movies/:id(.:format)             movies#show
+                   PUT    /movies/:id(.:format)             movies#update
+                   DELETE /movies/:id(.:format)             movies#destroy
+   movies_director        /movies/director/:id(.:format)    movies#director
+      movies_score        /movies/score/:id(.:format)       movies#score
+movies_viewed_with        /movies/viewed_with/:id(.:format) movies#viewed_with
+         benchmark        /benchmark/:type(.:format)        movies#benchmark
