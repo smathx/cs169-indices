@@ -17280,3 +17280,1250 @@ Served asset /jquery.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 15:14:00 +0000
 Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (9.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20111119180638)
+Migrating to AddDirectorToMovies (20120220071710)
+Migrating to CreateReviews (20121125140837)
+Migrating to CreateMoviegoers (20121125140934)
+Migrating to AddMovieIndexToReviews (20160220160838)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (6.0ms)[0m  CREATE INDEX "index_reviews_on_movie_id" ON "reviews" ("movie_id")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20160220160838')[0m
+  [1m[35m (12.2ms)[0m  commit transaction
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/movies" for 86.179.255.68 at 2016-02-20 16:10:01 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R') LIMIT 10[0m
+  Rendered movies/index.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 18ms (Views: 9.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:10:01 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:01 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:01 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:01 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/benchmark/movies" for 86.179.255.68 at 2016-02-20 16:10:03 +0000
+Processing by MoviesController#benchmark as HTML
+  Parameters: {"type"=>"movies"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "movies" 
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" LIMIT 125[0m
+  [1m[35mMoviegoer Load (0.5ms)[0m  SELECT "moviegoers".* FROM "moviegoers" LIMIT 125
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 1[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 2
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 3[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 4
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 5[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 6
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 7[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 8
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 9[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 10
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 11[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 12
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 13[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 14
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 15[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 16
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 17[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 18
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 19[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 20
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 21[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 22
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 23[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 24
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 25[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 26
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 27[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 28
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 30
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 31[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 32
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 33[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 34
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 35[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 36
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 37[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 38
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 39[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 40
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 41[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 42
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 43[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 44
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 45[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 46
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 47[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 48
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 49[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 50
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 51[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 52
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 53[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 54
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 55[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 56
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 57[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 58
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 59[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 60
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 61[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 62
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 63[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 64
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 65[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 66
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 67[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 68
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 69[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 70
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 71[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 72
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 73[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 74
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 75[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 76
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 77[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 78
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 79[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 80
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 81[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 82
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 83[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 84
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 85[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 86
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 87[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 88
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 89[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 90
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 91[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 92
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 93[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 94
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 95[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 96
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 97[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 98
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 99[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 100
+  [1m[36mReview Load (1.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 101[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 102
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 103[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 104
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 105[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 106
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 107[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 108
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 109[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 110
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 111[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 112
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 113[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 114
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 115[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 116
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 117[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 118
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 119[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 120
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 121[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 122
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 123[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 124
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = 125[0m
+  Rendered movies/benchmark.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 203ms (Views: 5.4ms | ActiveRecord: 30.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:03 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:03 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:10:03 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:03 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies" for 86.179.255.68 at 2016-02-20 16:10:06 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R') LIMIT 10
+  Rendered movies/index.html.haml within layouts/application (4.4ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:10:06 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:06 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:06 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:10:06 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/benchmark/moviegoers" for 86.179.255.68 at 2016-02-20 16:12:17 +0000
+Processing by MoviesController#benchmark as HTML
+  Parameters: {"type"=>"moviegoers"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "movies" [0m
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies" LIMIT 125
+  [1m[36mMoviegoer Load (0.6ms)[0m  [1mSELECT "moviegoers".* FROM "moviegoers" LIMIT 125[0m
+  [1m[35mReview Load (1.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 1
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 2[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 3
+  [1m[36mReview Load (0.9ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 4[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 5
+  [1m[36mReview Load (2.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 6[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 7
+  [1m[36mReview Load (1.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 8[0m
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 9
+  [1m[36mReview Load (0.9ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 10[0m
+  [1m[35mReview Load (1.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 11
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 12[0m
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 13
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 14[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 15
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 16[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 17
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 18[0m
+  [1m[35mReview Load (1.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 19
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 20[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 21
+  [1m[36mReview Load (1.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 22[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 23
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 24[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 25
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 26[0m
+  [1m[35mReview Load (1.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 27
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 28[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 29
+  [1m[36mReview Load (1.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 30[0m
+  [1m[35mReview Load (1.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 31
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 32[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 33
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 34[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 35
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 36[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 37
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 38[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 39
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 40[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 41
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 42[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 43
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 44[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 45
+  [1m[36mReview Load (1.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 46[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 47
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 48[0m
+  [1m[35mReview Load (1.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 49
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 50[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 51
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 52[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 53
+  [1m[36mReview Load (1.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 54[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 55
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 56[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 57
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 58[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 59
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 60[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 61
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 62[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 63
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 64[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 65
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 66[0m
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 67
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 68[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 69
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 70[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 71
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 72[0m
+  [1m[35mReview Load (1.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 73
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 74[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 75
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 76[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 77
+  [1m[36mReview Load (2.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 78[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 79
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 80[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 81
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 82[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 83
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 84[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 85
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 86[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 87
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 88[0m
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 89
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 90[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 91
+  [1m[36mReview Load (1.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 92[0m
+  [1m[35mReview Load (1.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 93
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 94[0m
+  [1m[35mReview Load (1.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 95
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 96[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 97
+  [1m[36mReview Load (1.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 98[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 99
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 100[0m
+  [1m[35mReview Load (1.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 101
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 102[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 103
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 104[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 105
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 106[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 107
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 108[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 109
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 110[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 111
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 112[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 113
+  [1m[36mReview Load (1.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 114[0m
+  [1m[35mReview Load (1.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 115
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 116[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 117
+  [1m[36mReview Load (1.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 118[0m
+  [1m[35mReview Load (1.1ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 119
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 120[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 121
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 122[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 123
+  [1m[36mReview Load (1.1ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 124[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 125
+  Rendered movies/benchmark.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 394ms (Views: 6.1ms | ActiveRecord: 144.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:12:17 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:12:17 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:12:17 +0000
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:12:17 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 86.179.255.68 at 2016-02-20 16:14:30 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R') LIMIT 10[0m
+  Rendered movies/index.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:14:31 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:31 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:31 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:31 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/benchmark/moviegoers" for 86.179.255.68 at 2016-02-20 16:14:32 +0000
+Processing by MoviesController#benchmark as HTML
+  Parameters: {"type"=>"moviegoers"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "movies" 
+  [1m[36mMovie Load (0.7ms)[0m  [1mSELECT "movies".* FROM "movies" LIMIT 125[0m
+  [1m[35mMoviegoer Load (0.4ms)[0m  SELECT "moviegoers".* FROM "moviegoers" LIMIT 125
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 1[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 2
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 3[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 4
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 5[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 6
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 7[0m
+  [1m[35mReview Load (1.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 8
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 9[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 10
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 11[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 12
+  [1m[36mReview Load (1.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 13[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 14
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 15[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 16
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 17[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 18
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 19[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 20
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 21[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 22
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 23[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 24
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 25[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 26
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 27[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 28
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 29[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 30
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 31[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 32
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 33[0m
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 34
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 35[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 36
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 37[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 38
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 39[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 40
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 41[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 42
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 43[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 44
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 45[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 46
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 47[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 48
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 49[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 50
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 51[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 52
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 53[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 54
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 55[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 56
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 57[0m
+  [1m[35mReview Load (3.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 58
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 59[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 60
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 61[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 62
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 63[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 64
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 65[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 66
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 67[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 68
+  [1m[36mReview Load (0.9ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 69[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 70
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 71[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 72
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 73[0m
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 74
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 75[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 76
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 77[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 78
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 79[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 80
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 81[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 82
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 83[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 84
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 85[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 86
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 87[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 88
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 89[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 90
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 91[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 92
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 93[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 94
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 95[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 96
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 97[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 98
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 99[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 100
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 101[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 102
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 103[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 104
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 105[0m
+  [1m[35mReview Load (1.0ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 106
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 107[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 108
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 109[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 110
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 111[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 112
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 113[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 114
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 115[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 116
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 117[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 118
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 119[0m
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 120
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 121[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 122
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 123[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 124
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 125[0m
+  Rendered movies/benchmark.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 251ms (Views: 5.1ms | ActiveRecord: 89.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:14:33 +0000
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:33 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:33 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:33 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies" for 86.179.255.68 at 2016-02-20 16:14:36 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R') LIMIT 10
+  Rendered movies/index.html.haml within layouts/application (4.8ms)
+Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:36 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:14:36 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:36 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:36 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/benchmark/moviegoers" for 86.179.255.68 at 2016-02-20 16:14:38 +0000
+Processing by MoviesController#benchmark as HTML
+  Parameters: {"type"=>"moviegoers"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "movies" [0m
+  [1m[35mMovie Load (0.5ms)[0m  SELECT "movies".* FROM "movies" LIMIT 125
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT "moviegoers".* FROM "moviegoers" LIMIT 125[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 1
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 2[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 3
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 4[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 5
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 6[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 7
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 8[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 9
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 10[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 11
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 12[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 13
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 14[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 15
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 16[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 17
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 18[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 19
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 20[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 21
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 22[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 23
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 24[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 25
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 26[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 27
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 28[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 29
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 30[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 31
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 32[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 33
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 34[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 35
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 36[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 37
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 38[0m
+  [1m[35mReview Load (3.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 39
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 40[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 41
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 42[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 43
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 44[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 45
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 46[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 47
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 48[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 49
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 50[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 51
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 52[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 53
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 54[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 55
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 56[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 57
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 58[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 59
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 60[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 61
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 62[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 63
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 64[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 65
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 66[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 67
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 68[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 69
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 70[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 71
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 72[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 73
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 74[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 75
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 76[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 77
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 78[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 79
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 80[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 81
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 82[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 83
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 84[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 85
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 86[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 87
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 88[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 89
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 90[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 91
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 92[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 93
+  [1m[36mReview Load (0.9ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 94[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 95
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 96[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 97
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 98[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 99
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 100[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 101
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 102[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 103
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 104[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 105
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 106[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 107
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 108[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 109
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 110[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 111
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 112[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 113
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 114[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 115
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 116[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 117
+  [1m[36mReview Load (0.8ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 118[0m
+  [1m[35mReview Load (0.9ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 119
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 120[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 121
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 122[0m
+  [1m[35mReview Load (0.7ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 123
+  [1m[36mReview Load (0.6ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 124[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 125
+  Rendered movies/benchmark.html.haml within layouts/application (0.5ms)
+Completed 200 OK in 247ms (Views: 5.3ms | ActiveRecord: 88.4ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:38 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:14:38 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:38 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:14:38 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (7.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMovies (20111119180638)
+Migrating to AddDirectorToMovies (20120220071710)
+Migrating to CreateReviews (20121125140837)
+Migrating to CreateMoviegoers (20121125140934)
+Migrating to AddMovieIndexToReviews (20160220160838)
+Migrating to AddMoviegoerIndexToReviews (20160220161146)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (5.9ms)[0m  CREATE INDEX "index_reviews_on_moviegoer_id" ON "reviews" ("moviegoer_id")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20160220161146')[0m
+  [1m[35m (10.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/movies" for 86.179.255.68 at 2016-02-20 16:15:29 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R') LIMIT 10[0m
+  Rendered movies/index.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 68ms (Views: 9.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:15:29 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:29 +0000
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:29 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:29 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/benchmark/moviegoers" for 86.179.255.68 at 2016-02-20 16:15:32 +0000
+Processing by MoviesController#benchmark as HTML
+  Parameters: {"type"=>"moviegoers"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "movies" 
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" LIMIT 125[0m
+  [1m[35mMoviegoer Load (0.5ms)[0m  SELECT "moviegoers".* FROM "moviegoers" LIMIT 125
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 1[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 2
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 3[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 4
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 5[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 6
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 7[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 8
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 9[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 10
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 11[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 12
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 13[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 14
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 15[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 16
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 17[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 18
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 19[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 20
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 21[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 22
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 23[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 24
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 25[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 26
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 27[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 28
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 30
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 31[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 32
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 33[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 34
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 35[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 36
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 37[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 38
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 39[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 40
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 41[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 42
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 43[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 44
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 45[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 46
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 47[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 48
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 49[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 50
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 51[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 52
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 53[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 54
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 55[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 56
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 57[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 58
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 59[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 60
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 61[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 62
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 63[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 64
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 65[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 66
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 67[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 68
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 69[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 70
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 71[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 72
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 73[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 74
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 75[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 76
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 77[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 78
+  [1m[36mReview Load (2.0ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 79[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 80
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 81[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 82
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 83[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 84
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 85[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 86
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 87[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 88
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 89[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 90
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 91[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 92
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 93[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 94
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 95[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 96
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 97[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 98
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 99[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 100
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 101[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 102
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 103[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 104
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 105[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 106
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 107[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 108
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 109[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 110
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 111[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 112
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 113[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 114
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 115[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 116
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 117[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 118
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 119[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 120
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 121[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 122
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 123[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 124
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 125[0m
+  Rendered movies/benchmark.html.haml within layouts/application (0.4ms)
+Completed 200 OK in 223ms (Views: 4.9ms | ActiveRecord: 32.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:15:33 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:33 +0000
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:33 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:33 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 86.179.255.68 at 2016-02-20 16:15:41 +0000
+Processing by MoviesController#index as HTML
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R') LIMIT 10
+  Rendered movies/index.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 12ms (Views: 10.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:15:41 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:41 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:41 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:41 +0000
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/benchmark/moviegoers" for 86.179.255.68 at 2016-02-20 16:15:44 +0000
+Processing by MoviesController#benchmark as HTML
+  Parameters: {"type"=>"moviegoers"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "movies" [0m
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" LIMIT 125
+  [1m[36mMoviegoer Load (0.4ms)[0m  [1mSELECT "moviegoers".* FROM "moviegoers" LIMIT 125[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 1
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 2[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 3
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 4[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 5
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 6[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 7
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 8[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 9
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 10[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 11
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 12[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 13
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 14[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 15
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 16[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 17
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 18[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 19
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 20[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 21
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 22[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 23
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 24[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 25
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 26[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 27
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 28[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 29
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 30[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 31
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 32[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 33
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 34[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 35
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 36[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 37
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 38[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 39
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 40[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 41
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 42[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 43
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 44[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 45
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 46[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 47
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 48[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 49
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 50[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 51
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 52[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 53
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 54[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 55
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 56[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 57
+  [1m[36mReview Load (2.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 58[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 59
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 60[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 61
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 62[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 63
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 64[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 65
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 66[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 67
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 68[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 69
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 70[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 71
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 72[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 73
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 74[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 75
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 76[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 77
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 78[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 79
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 80[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 81
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 82[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 83
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 84[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 85
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 86[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 87
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 88[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 89
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 90[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 91
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 92[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 93
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 94[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 95
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 96[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 97
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 98[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 99
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 100[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 101
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 102[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 103
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 104[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 105
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 106[0m
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 107
+  [1m[36mReview Load (0.9ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 108[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 109
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 110[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 111
+  [1m[36mReview Load (0.7ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 112[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 113
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 114[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 115
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 116[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 117
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 118[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 119
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 120[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 121
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 122[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 123
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 124[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 125
+  Rendered movies/benchmark.html.haml within layouts/application (0.7ms)
+Completed 200 OK in 276ms (Views: 7.8ms | ActiveRecord: 41.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:15:44 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:45 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:45 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:45 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 86.179.255.68 at 2016-02-20 16:15:53 +0000
+Processing by MoviesController#index as HTML
+  [1m[36mMovie Load (0.4ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'PG', 'PG-13', 'NC-17', 'R') LIMIT 10[0m
+  Rendered movies/index.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:15:53 +0000
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:53 +0000
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:53 +0000
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:53 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/benchmark/moviegoers" for 86.179.255.68 at 2016-02-20 16:15:55 +0000
+Processing by MoviesController#benchmark as HTML
+  Parameters: {"type"=>"moviegoers"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "movies" 
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" LIMIT 125[0m
+  [1m[35mMoviegoer Load (0.4ms)[0m  SELECT "moviegoers".* FROM "moviegoers" LIMIT 125
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 1[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 2
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 3[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 4
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 5[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 6
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 7[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 8
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 9[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 10
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 11[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 12
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 13[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 14
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 15[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 16
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 17[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 18
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 19[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 20
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 21[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 22
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 23[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 24
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 25[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 26
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 27[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 28
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 29[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 30
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 31[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 32
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 33[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 34
+  [1m[36mReview Load (0.2ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 35[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 36
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 37[0m
+  [1m[35mReview Load (0.8ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 38
+  [1m[36mReview Load (1.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 39[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 40
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 41[0m
+  [1m[35mReview Load (0.2ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 42
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 43[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 44
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 45[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 46
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 47[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 48
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 49[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 50
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 51[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 52
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 53[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 54
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 55[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 56
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 57[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 58
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 59[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 60
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 61[0m
+  [1m[35mReview Load (0.6ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 62
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 63[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 64
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 65[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 66
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 67[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 68
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 69[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 70
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 71[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 72
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 73[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 74
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 75[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 76
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 77[0m
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 78
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 79[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 80
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 81[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 82
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 83[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 84
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 85[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 86
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 87[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 88
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 89[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 90
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 91[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 92
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 93[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 94
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 95[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 96
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 97[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 98
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 99[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 100
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 101[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 102
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 103[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 104
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 105[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 106
+  [1m[36mReview Load (0.5ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 107[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 108
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 109[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 110
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 111[0m
+  [1m[35mReview Load (0.4ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 112
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 113[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 114
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 115[0m
+  [1m[35mReview Load (0.5ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 116
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 117[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 118
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 119[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 120
+  [1m[36mReview Load (0.4ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 121[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 122
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 123[0m
+  [1m[35mReview Load (0.3ms)[0m  SELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 124
+  [1m[36mReview Load (0.3ms)[0m  [1mSELECT "reviews".* FROM "reviews" WHERE "reviews"."moviegoer_id" = 125[0m
+  Rendered movies/benchmark.html.haml within layouts/application (1.1ms)
+Completed 200 OK in 274ms (Views: 9.0ms | ActiveRecord: 41.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:55 +0000
+Served asset /jquery.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:55 +0000
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 86.179.255.68 at 2016-02-20 16:15:55 +0000
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 86.179.255.68 at 2016-02-20 16:15:55 +0000
+Served asset /application.css - 304 Not Modified (0ms)
